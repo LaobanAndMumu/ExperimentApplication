@@ -1,0 +1,37 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "angular-file-saver": "^1.1.3",
+    "aws-sdk": "2.x",
+    "express": "^4.15.2",
+    "file-saver": "^1.3.3",
+    "multer-s3": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LaobanAndMumu/ExperimentApp.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "bugs": {
+    "url": "https://github.com/LaobanAndMumu/ExperimentApp/issues"
+  },
+  "homepage": "https://github.com/LaobanAndMumu/ExperimentApp#readme",
+  "description": ""
+}
