@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <h1>Admin</h1>
+
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
+
+    
+    <label for="password">Password</label>
+    <input ng-model="user.password"
+           id="password"
+           class="form-control"
+           type="password"
+           placeholder="password"/>
+
+    <a ng-click="model.logout()"
+       class="btn btn-primary btn-block">
+        Logout
+    </a>
+   
+</div>

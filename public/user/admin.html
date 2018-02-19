@@ -1,0 +1,130 @@
+<style>
+	.box{
+		width:70%;
+		margin:0 auto;
+		font-size:1.5em;
+	}
+	.thick{
+		background-color:#e0e0d1;
+		font-weight: bold;
+	}
+	h2{
+		text-decoration: underline;
+	}
+}
+</style>
+<!--<body ng-controller = "AdminCtrl">-->
+<div class="box" >
+	<a ng-click="model.logout()"
+       class="btn btn-primary btn-block">
+        Logout
+    </a>
+	<h1>Question Edit</h1>
+	
+	<div>
+		<h2>
+			Instruction
+		</h2>
+		
+		<ol>
+			<li>Click <span class="thick">Add a question </span> button</li>
+			<li>Click <span class="thick">Choose File</span> button</li>
+			<li>Once decide which file to upload, click <span class="thick">Upload</span> button</li>
+			<li>Then, at <span class="thick">Enter a question</span> section, enter your question</li>
+			<ul>
+				<li>If the question has answers, click <span class="thick">Add</span> to add an answer.
+				Once decide, click <span class="thick">Submit</span>
+				</li>
+				
+				<li>If this question does not have answers, skip 
+				<span class="thick">Add an answer for multiple choices</span>
+				</li>
+			</ul>
+			<li>
+				After setting up a question, click 
+				<span class="thick">Submit Question</span>
+			</li>
+			<li>
+				Your input will be shown at the bottom
+				of the page
+			</li>
+			<li>If decide to delete a question, click <span class="thick">DELETE</span> button</li>
+			<li>If decide to insert a question at <span class="thick">Insert Question Here</span> 
+			section, click <span class="thick">Insert Question Here</span> button</li>
+			<li>Repeat the above steps for every question</li>
+			<li>Once set up all the questions for an experiment, click 
+			<span class="thick">Submit Experiment</span> button</li>
+		</ol>
+	</div>
+	<hr />
+	
+	
+	
+	
+	
+	
+	<button ng-click='showQuestion()'>Add a question</button>
+	
+	<div ng-hide='hiddenQuestion'>
+		<!--<div ng-controller = "myCtrl" class="form-group">-->
+		<div class="form-group">
+
+			<label for="exampleInputFile">File input</label>
+			<input type="file" file-model="myFile" class="form-control-file" 
+			 id="exampleInputFile" aria-describedby="fileHelp">
+			<br />
+			<button ng-click="model.uploadFile()" >Upload</button>
+			<div ng-repeat='path in uploads'>
+				<ul>
+					<li>
+						{{path}}
+					</li>
+					
+				</ul>
+			</div>
+			
+			
+		</div>
+		
+		<label>Enter a question</label><br />
+		<input type="text" ng-model="description">
+		<hr />
+		
+		<label>Add an answer for multiple choices</label><br />
+		<button ng-click='showOption()'>Add</button>
+		
+		<div ng-hide='hiddenOption'>
+			<div ng-repeat="option in options">
+				<ul>
+					<li>{{option}}</li>
+				</ul>
+			</div>
+			
+			<input type="text" ng-model="option">
+			<br />
+			<br />
+			<button ng-click='addOption()'>Submit</button>
+			<hr/>
+		</div>
+		<br />
+		<hr/>
+		<button ng-click='addQuestion()' class="btn btn-primary">Submit Question</button>
+	</div>
+	
+	<hr/>
+	<div  ng-repeat = "question in questions">
+		<button ng-click="model.insert($index)" class="btn btn-success">Insert Question Here</button>
+		<br />
+		Image/Video:{{question.file}}<br />
+		Question: {{question.description}}
+		<div ng-repeat="option in question.options">
+			<ul>
+				<li>{{option}}</li>
+			</ul>
+		</div>
+		<a class="btn" ng-click="removeQuestion(question)">DELETE</a>
+	</div>
+	
+	<button ng-click="submitExperiment()" class="btn btn-success">Submit Experiment</button>
+	
+</div>	

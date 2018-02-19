@@ -1,0 +1,48 @@
+<style>
+.box{
+	margin:50px auto;
+	width:50%;
+}
+</style>
+<div class="box" >
+	<a ng-click="model.logout()"
+       class="btn btn-primary btn-block">
+        Logout
+    </a>
+	<hr />
+	<div>
+		<button class="btn btn-primary" ng-click="model.seeData()"> 
+		Download experiment results	
+		</button>
+		
+		<br />
+		*Note*<br/>
+		Result format:<br/>
+		"experimenters":<br/>
+		{Profile questions: answers, <br/>
+		Question 1 File, <br/>
+		Question 1, <br/>
+		Question 1 multiple choice answers, <br/>
+		Question 1 Answer, <br/>
+		Time Spent in Milliseconds, <br/>
+		Question 2 File...}
+    </div>
+	<hr/>
+	
+	<button class="btn btn-primary" ng-click="model.editProfile()"> 
+		Edit profile questions
+	</button>
+	
+	<hr/>
+	<button class="btn btn-primary" ng-click="model.newExperiment()"> 
+		Set up an experiment
+	</button>
+	
+	<hr/>
+	<button class="btn btn-primary" ng-click="model.viewExperiments()"> 
+		View experiment details
+	</button>
+	
+    
+	
+</div>	

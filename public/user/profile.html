@@ -1,0 +1,71 @@
+<style>
+	#box{
+		width:70%;
+		margin:0 auto;
+		font-size:1.5em;
+	}
+	
+
+</style>
+<div id="box" class="container-fluid" ng-init="model.init()">
+     
+    <div class="alert alert-danger" ng-show="model.nameError">
+    {{model.nameError}}
+    </div>
+	  <div class="alert alert-danger" ng-show="model.ageError">
+    {{model.ageError}}
+    </div>
+	  <div class="alert alert-danger" ng-show="model.genderError">
+    {{model.genderError}}
+    </div>
+	<div class="alert alert-danger" ng-show="model.genderError">
+    {{model.generalError}}
+    </div>
+	
+	
+    <div class="alert alert-success" ng-show="model.message">
+       
+    </div>
+
+    <label for="name">Name</label>
+    <input ng-model="model.name"
+           id="name"
+           class="form-control"
+           placeholder="name" required/>
+	<br/>   
+
+    <label for="age">Age</label>
+    <input ng-model="model.age"
+           id="age"
+           class="form-control"
+           placeholder="Enter age,ex 20" required/>
+	<br/>
+    <label for="gender">Gender</label>
+	<br/>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" ng-click="model.gender='male'">Male
+    </label>
+	
+    <label class="radio-inline">
+      <input type="radio" name="optradio" ng-click="model.gender='female'">Female 
+    </label>
+	
+    <label class="radio-inline">
+      <input type="radio" name="optradio" ng-click="model.gender='other'">Other
+    </label>
+		
+	<div ng-repeat="feature in model.inFile">
+		<label > {{feature}}</label>
+		<input ng-model="model.answers[$index]"
+           id="feature"
+           class="form-control"
+           placeholder="" required/>
+	</div>
+		
+    
+	<br />
+    <a class="btn btn-primary btn-block" 
+	   ng-click="model.addToUser()">Begin Experiment</a>
+    
+</div>
+

@@ -1,0 +1,30 @@
+<style>
+.box{
+	width:60%;
+	margin: 100px auto;
+}
+.box .experiment.inactive{
+	visibility:hidden;
+}
+.box .experiment.active{
+	visibility:visible;
+}
+
+</style>
+<a ng-click="model.logout()"
+   class="btn btn-primary btn-block">
+	Logout
+</a>
+<hr/>
+<div ng-init="model.getPasswords()" class="box">
+
+	<div ng-repeat="experiment in model.experiments">
+		<a href="" 
+		   ng-click="model.getData(experiment.expID)"
+		   class="btn btn-primary " >
+			Download {{experiment.expID}} results
+		</a>
+		
+	</div>
+
+</div>

@@ -1,0 +1,53 @@
+<style>
+.box{
+		width:70%;
+		margin:0 auto;
+		font-size:1.5em;
+		position:relative;
+		top:100px;
+	}
+	.thick{
+		background-color:#e0e0d1;
+		font-weight: bold;
+	}
+	h2{
+		text-decoration: underline;
+	}
+</style>
+
+<div  class="box" ng-init="model.init()">
+
+	<a ng-click="model.logout()"
+       class="btn btn-primary btn-block">
+        Logout
+    </a>
+	<hr />
+    <div>
+		<h2>
+			Instructions
+		</h2>
+		You may remove or add questions to the profile page 
+		<ol>
+			<li>Click <span class="thick">Add a question </span> button to add a profile question</li>
+			<li>Click <span class="thick">DELETE </span> to remove a profile question</li>
+			<li>Click <span class="thick">Submit Changes to Profile Questions </span> button to finalize your changes</li>
+			
+		</ol>
+	</div>
+	<div ng-repeat="extra in model.inFile">
+		{{extra}}
+
+		<a class="btn" ng-click="model.removeFromFile(extra)">DELETE</a>
+	</div>
+	
+	<div ng-repeat="add in model.additions track by $index">
+		<input type="text" ng-model="model.additions[$index]">
+		<a class="btn" ng-click="model.removeAddition($index)">DELETE</a>
+	</div>
+	
+	<button ng-click="model.additions.push('Please enter a question')">Add a question</button>
+	<hr />
+
+	<button ng-click="model.update()" class="btn btn-success">Submit Changes to Profile Questions</button>
+
+</div>
