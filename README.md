@@ -1,6 +1,7 @@
 # ExperimentApplication
  
 _Author: Yu-ching Sun_
+
 _Author: Kyle McGlynn_
 
 This application is a JavaScript application, which allows the administrator to create experiments of alternating images and questions, and upload questions and answers. Also, it allows test subjects to take experiment tests.  
