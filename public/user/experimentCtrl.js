@@ -46,12 +46,12 @@
 		                     'jif', 'jfif', 'jp2', 'jpx', 'j2k', 
 							 'j2c', 'fpx', 'pcd', 'png', 'pdf'];
 		vm.config = { width: 650,
-					  height: 360,
-					  autoHide: false,
-					  autoPlay: true,
-					  responsive: true,
-					  sources:[],
-					  theme:{url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"}};
+			      height: 360,
+			      autoHide: false,
+			      autoPlay: true,
+			      responsive: true,
+			      sources:[],
+			      theme:{url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"}};
 		
 		function getQ(user){
 			$http.get('/getQuestion',user)
