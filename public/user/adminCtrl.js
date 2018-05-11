@@ -71,8 +71,8 @@ myApp.controller("AdminCtrl",['$scope','$http','$location', function($scope,$htt
 		$scope.addQuestion=function(){
 			
 			$scope.questions.push({file:$scope.filename,
-								   description:$scope.description,
-								   options:$scope.options});
+					       description:$scope.description,
+					       options:$scope.options});
 			$scope.filename = '';
 			$scope.description='';
 			$scope.options=[];
